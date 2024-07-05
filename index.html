@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="/_vercel/insights/script.js"></script>
+    
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
+    />
+    <title>Vercel HTMX Starter</title>
+    <meta
+    name="description"
+    content="High-performance HTML based website template."
+    />
+    <script src="https://unpkg.com/htmx.org@2.0.0/dist/htmx.js" integrity="sha384-Xh+GLLi0SMFPwtHQjT72aPG19QvKB8grnyRbYBNIdHWc2NkCrz65jlU7YrzO6qRp" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <h1>Vercel HTMX Starter</h1>
+    <div>
+      <label for="genre">Select Genre:</label>
+      <select id="genre" hx-get="/genres" hx-trigger="load,change" hx-target="#subgenre">
+          <option value="">--Choose a Genre--</option>
+          <!-- Options will be dynamically loaded here -->
+      </select>
+    </div>
+    <div>
+      <label for="subgenre">Select Subgenre/Artist:</label>
+      <select id="subgenre" disabled>
+          <option value="">--Choose a Subgenre/Artist--</option>
+          <!-- Options will be dynamically loaded here -->
+      </select>
+    </div>
+    <div id="result">
+      <!-- Additional content can be displayed here -->
+    </div>
+  </body>
+</html>
