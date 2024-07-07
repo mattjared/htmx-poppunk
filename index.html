@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/_vercel/insights/script.js"></script>
-    
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
@@ -14,26 +12,18 @@
     name="description"
     content="High-performance HTML based website template."
     />
-    <script src="https://unpkg.com/htmx.org@1.8.4"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.0"></script>
   </head>
   <body>
     <h1>Vercel HTMX Starter</h1>
+    <p>a completely silly example of picking an artist then picking and displaying albums </p>
+    <p>i wanted to learn htmx and pulled the discogs API as an example</p>
     <div>
-      <label for="genre">Select Genre:</label>
-      <select id="genre" hx-get="/genres" hx-trigger="load,change" hx-target="#subgenre">
-          <option value="">--Choose a Genre--</option>
-          <!-- Options will be dynamically loaded here -->
-      </select>
+        <h2>Select Artist:</h2>
+        <div class="artist" hx-get="/albums?artist=95886" hx-target="#albums">Hall and Oates</div>
+        <div class="artist" hx-get="/albums?artist=82730" hx-target="#albums">The Beatles</div>
+        <div class="artist" hx-get="/albums?artist=3840" hx-target="#albums">Radiohead</div>
     </div>
-    <div>
-      <label for="subgenre">Select Subgenre/Artist:</label>
-      <select id="subgenre" disabled>
-          <option value="">--Choose a Subgenre/Artist--</option>
-          <!-- Options will be dynamically loaded here -->
-      </select>
-    </div>
-    <div id="result">
-      <!-- Additional content can be displayed here -->
-    </div>
+    <div id="albums"></div>
   </body>
 </html>
