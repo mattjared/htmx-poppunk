@@ -5,7 +5,7 @@ const { env } = require('process');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const USER_AGENT = process.env.USER_AGENT
+const USER_AGENT = 'MyHTMXPoppunkApp/1.0 +https://htmx-poppunk.vercel.app/'
 
 // const artists = [
 //     { id: 1, name: 'Radiohead', discogsId: 3840 },
